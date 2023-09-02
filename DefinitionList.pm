@@ -15,14 +15,27 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['color', 'css_dl', 'lang'], @params);
+		['border', 'color', 'css_dl', 'dd_left_padding', 'dt_sep', 'dt_width', 'lang'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
+
+	# Border of dl.
+	# XXX 3px double #ccc
+	$self->{'border'} = undef;
 
 	# Definition key color.
 	$self->{'color'} = 'black';
 
 	# CSS style for definition list.
 	$self->{'css_dl'} = 'dl';
+
+	# Left padding after term.
+	$self->{'dd_left_padding'} = '110px';
+
+	# Definition term separator.
+	$self->{'dt_sep'} = ':';
+
+	# Definition term width.
+	$self->{'dt_width'} = '100px';
 
 	$self->{'lang'} = undef;
 
@@ -87,25 +100,27 @@ sub _process_css {
 
 	$self->{'css'}->put(
 		['s', '.'.$self->{'css_dl'}],
-		['d', 'border', '3px double #ccc'],
+		defined $self->{'border'} ? (
+			['d', 'border', $self->{'border'}],
+		) : (),
 		['d', 'padding', '0.5em'],
 		['e'],
 
 		['s', '.'.$self->{'css_dl'}.' dt'],
 		['d', 'float', 'left'],
 		['d', 'clear', 'left'],
-		['d', 'width', '100px'],
+		['d', 'width', $self->{'dt_width'}],
 		['d', 'text-align', 'right'],
 		['d', 'font-weight', 'bold'],
 		['d', 'color', $self->{'color'}],
 		['e'],
 
 		['s', '.'.$self->{'css_dl'}.' dt:after'],
-		['d', 'content', ':'],
+		['d', 'content', '"'.$self->{'dt_sep'}.'"'],
 		['e'],
 
 		['s', '.'.$self->{'css_dl'}.' dd'],
-		['d', 'margin', '0 0 0 110px'],
+		['d', 'margin', '0 0 0 '.$self->{'dd_left_padding'}],
 		['d', 'padding', '0 0 0.5em 0'],
 		['e'],
 	);
