@@ -78,13 +78,13 @@ sub _process {
 		['b', 'dl'],
 		['a', 'class', $self->{'css_dl'}],
 	);
-	foreach my $key (keys %{$self->{'_definition_list'}}) {
+	foreach my $item_ar (@{$self->{'_definition_list'}}) {
 		$self->{'tags'}->put(
 			['b', 'dt'],
-			['d', $key],
+			['d', $item_ar->[0]],
 			['e', 'dt'],
 			['b', 'dd'],
-			['d', $self->{'_definition_list'}->{$key}],
+			['d', $item_ar->[1]],
 			['e', 'dd'],
 		);
 	}
@@ -129,13 +129,16 @@ sub _process_css {
 }
 
 sub _set_dl {
-	my ($self, $definition_list_hr) = @_;
+	my ($self, $definition_list_ar) = @_;
 
-	if (! defined $definition_list_hr) {
+	if (! defined $definition_list_ar) {
 		return;
 	}
+	if (ref $definition_list_ar ne 'ARRAY') {
+		err 'Definition list must be a reference to array.';
+	}
 
-	$self->{'_definition_list'} = $definition_list_hr;
+	$self->{'_definition_list'} = $definition_list_ar;
 
 	return;
 }
