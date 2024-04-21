@@ -15,7 +15,8 @@ sub new {
 
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
-		['border', 'color', 'css_dl', 'dd_left_padding', 'dt_sep', 'dt_width', 'lang'], @params);
+		['border', 'color', 'css_class', 'dd_left_padding', 'dt_sep',
+		'dt_width', 'lang'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Border of dl.
@@ -25,8 +26,8 @@ sub new {
 	# Definition key color.
 	$self->{'color'} = 'black';
 
-	# CSS style for definition list.
-	$self->{'css_dl'} = 'dl';
+	# CSS class.
+	$self->{'css_class'} = 'dl';
 
 	# Left padding after term.
 	$self->{'dd_left_padding'} = '110px';
@@ -76,7 +77,7 @@ sub _process {
 
 	$self->{'tags'}->put(
 		['b', 'dl'],
-		['a', 'class', $self->{'css_dl'}],
+		['a', 'class', $self->{'css_class'}],
 	);
 	foreach my $item_ar (@{$self->{'_definition_list'}}) {
 		$self->{'tags'}->put(
@@ -99,14 +100,14 @@ sub _process_css {
 	my $self = shift;
 
 	$self->{'css'}->put(
-		['s', '.'.$self->{'css_dl'}],
+		['s', '.'.$self->{'css_class'}],
 		defined $self->{'border'} ? (
 			['d', 'border', $self->{'border'}],
 		) : (),
 		['d', 'padding', '0.5em'],
 		['e'],
 
-		['s', '.'.$self->{'css_dl'}.' dt'],
+		['s', '.'.$self->{'css_class'}.' dt'],
 		['d', 'float', 'left'],
 		['d', 'clear', 'left'],
 		['d', 'width', $self->{'dt_width'}],
@@ -115,11 +116,11 @@ sub _process_css {
 		['d', 'color', $self->{'color'}],
 		['e'],
 
-		['s', '.'.$self->{'css_dl'}.' dt:after'],
+		['s', '.'.$self->{'css_class'}.' dt:after'],
 		['d', 'content', '"'.$self->{'dt_sep'}.'"'],
 		['e'],
 
-		['s', '.'.$self->{'css_dl'}.' dd'],
+		['s', '.'.$self->{'css_class'}.' dd'],
 		['d', 'margin', '0 0 0 '.$self->{'dd_left_padding'}],
 		['d', 'padding', '0 0 0.5em 0'],
 		['e'],
