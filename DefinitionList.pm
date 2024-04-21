@@ -6,6 +6,7 @@ use warnings;
 
 use Class::Utils qw(set_params split_params);
 use Error::Pure qw(err);
+use Mo::utils::CSS 0.06 qw(check_css_unit);
 
 our $VERSION = 0.01;
 
@@ -42,6 +43,9 @@ sub new {
 
 	# Process params.
 	set_params($self, @{$object_params_ar});
+
+	check_css_unit($self, 'dd_left_padding');
+	check_css_unit($self, 'dt_width');
 
 	# Object.
 	return $self;
