@@ -60,15 +60,15 @@ sub _cleanup {
 }
 
 sub _init {
-	my ($self, @params) = @_;
+	my ($self, $definition_list_ar) = @_;
 
-	return $self->_set_dl(@params);
+	return $self->_set_dl($definition_list_ar);
 }
 
 sub _prepare {
-	my ($self, @params) = @_;
+	my ($self, $definition_list_ar) = @_;
 
-	return $self->_set_dl(@params);
+	return $self->_set_dl($definition_list_ar);
 }
 
 # Process 'Tags'.
