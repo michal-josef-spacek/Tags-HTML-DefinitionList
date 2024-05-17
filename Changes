@@ -1,4 +1,4 @@
-0.02
+0.02 2024-05-17T18:53:43+02:00
  - Add check for 'border' parameter.
  - Add check for 'css_class' parameter.
  - Add constructor tests.
