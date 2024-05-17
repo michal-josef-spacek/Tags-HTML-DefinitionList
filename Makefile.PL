@@ -19,7 +19,7 @@ readme_from 'DefinitionList.pm';
 recursive_author_tests('xt');
 requires 'Class::Utils' => 0.02;
 requires 'Error::Pure' => 0.07;
-requires 'Mo::utils::CSS' => 0.06;
+requires 'Mo::utils::CSS' => 0.07;
 requires 'Tags::HTML' => 0.08;
 requires 'perl' => '5.8.0';
 resources 'bugtracker' => 'https://github.com/michal-josef-spacek/Tags-HTML-DefinitionList/issues';

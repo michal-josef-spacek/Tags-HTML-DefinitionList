@@ -6,7 +6,7 @@ use warnings;
 
 use Class::Utils qw(set_params split_params);
 use Error::Pure qw(err);
-use Mo::utils::CSS 0.06 qw(check_css_class check_css_unit);
+use Mo::utils::CSS 0.07 qw(check_css_border check_css_class check_css_unit);
 
 our $VERSION = 0.02;
 
@@ -21,7 +21,6 @@ sub new {
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Border of dl.
-	# XXX 3px double #ccc
 	$self->{'border'} = undef;
 
 	# Definition key color.
@@ -41,6 +40,8 @@ sub new {
 
 	# Process params.
 	set_params($self, @{$object_params_ar});
+
+	check_css_border($self, 'border');
 
 	check_css_class($self, 'css_class');
 
@@ -278,6 +279,25 @@ Returns undef.
  new():
          From Class::Utils::set_params():
                  Unknown parameter '%s'.
+         From Mo::utils::CSS::check_css_border():
+                 Parameter 'border' contain bad unit.
+                         Unit: %s
+                         Value: %s
+                 Parameter 'border' doesn't contain unit name.
+                         Value: %s
+                 Parameter 'border' doesn't contain unit number.
+                         Value: %s
+                 Parameter 'border' has bad rgb color (bad hex number).
+                         Value: %s
+                 Parameter 'border' has bad rgb color (bad length).
+                         Value: %s
+                 Parameter 'border' has bad color name.
+                         Value: %s
+                 Parameter 'border' hasn't border style.
+                         Value: %s
+                 Parameter 'border' must be a array.
+                         Value: %s
+                         Reference: %s
          From Mo::utils::CSS::check_css_class():
                  Parameter 'css_class' has bad CSS class name.
                          Value: %s

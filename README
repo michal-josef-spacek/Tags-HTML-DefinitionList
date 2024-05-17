@@ -108,6 +108,25 @@ ERRORS
      new():
              From Class::Utils::set_params():
                      Unknown parameter '%s'.
+             From Mo::utils::CSS::check_css_border():
+                     Parameter 'border' contain bad unit.
+                             Unit: %s
+                             Value: %s
+                     Parameter 'border' doesn't contain unit name.
+                             Value: %s
+                     Parameter 'border' doesn't contain unit number.
+                             Value: %s
+                     Parameter 'border' has bad rgb color (bad hex number).
+                             Value: %s
+                     Parameter 'border' has bad rgb color (bad length).
+                             Value: %s
+                     Parameter 'border' has bad color name.
+                             Value: %s
+                     Parameter 'border' hasn't border style.
+                             Value: %s
+                     Parameter 'border' must be a array.
+                             Value: %s
+                             Reference: %s
              From Mo::utils::CSS::check_css_class():
                      Parameter 'css_class' has bad CSS class name.
                              Value: %s
