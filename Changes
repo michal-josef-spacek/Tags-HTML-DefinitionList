@@ -1,6 +1,7 @@
 0.02
  - Add check for 'css_class' parameter.
  - Add constructor tests.
+ - Add documentation.
  - Improve subroutine argument namess for init() and prepare().
  - Remove 'lang' parameter. Not used.
 
