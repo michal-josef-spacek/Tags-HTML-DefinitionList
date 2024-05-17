@@ -28,7 +28,6 @@ resources 'repository' => 'git://github.com/michal-josef-spacek/Tags-HTML-Defini
 test_requires 'CSS::Struct::Output::Structure' => 0;
 test_requires 'English' => 0;
 test_requires 'Error::Pure::Utils' => 0;
-test_requires 'Tags::HTML::DefinitionList' => 0;
 test_requires 'Tags::Output::Structure' => 0;
 test_requires 'Test::MockObject' => 0;
 test_requires 'Test::More' => 0;
