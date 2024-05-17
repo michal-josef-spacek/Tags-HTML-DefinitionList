@@ -83,11 +83,11 @@ my @error = err_msg();
 is_deeply(
 	\@error,
 	[
-		"Parameter 'dd_left_padding' doesn't contain number.",
+		"Parameter 'dd_left_padding' doesn't contain unit number.",
 		'Value',
 		'bad',
 	],
-	"Parameter 'dd_left_padding' doesn't contain number.",
+	"Parameter 'dd_left_padding' doesn't contain unit number.",
 );
 clean();
 
@@ -101,11 +101,11 @@ eval {
 is_deeply(
 	\@error,
 	[
-		"Parameter 'dd_left_padding' doesn't contain unit.",
+		"Parameter 'dd_left_padding' doesn't contain unit name.",
 		'Value',
 		'100',
 	],
-	"Parameter 'dd_left_padding' doesn't contain unit.",
+	"Parameter 'dd_left_padding' doesn't contain unit name.",
 );
 clean();
 
@@ -139,11 +139,11 @@ eval {
 is_deeply(
 	\@error,
 	[
-		"Parameter 'dt_width' doesn't contain number.",
+		"Parameter 'dt_width' doesn't contain unit number.",
 		'Value',
 		'bad',
 	],
-	"Parameter 'dt_width' doesn't contain number.",
+	"Parameter 'dt_width' doesn't contain unit number.",
 );
 clean();
 
@@ -157,11 +157,11 @@ eval {
 is_deeply(
 	\@error,
 	[
-		"Parameter 'dt_width' doesn't contain unit.",
+		"Parameter 'dt_width' doesn't contain unit name.",
 		'Value',
 		'100',
 	],
-	"Parameter 'dt_width' doesn't contain unit.",
+	"Parameter 'dt_width' doesn't contain unit name.",
 );
 clean();
 
