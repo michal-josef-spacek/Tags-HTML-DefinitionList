@@ -3,7 +3,13 @@ abstract: 'Tags helper for definition list.'
 author:
   - 'Michal Josef Spacek <skim@cpan.org>'
 build_requires:
+  CSS::Struct::Output::Structure: 0
+  English: 0
+  Error::Pure::Utils: 0
   ExtUtils::MakeMaker: 6.36
+  Tags::HTML::DefinitionList: 0
+  Tags::Output::Structure: 0
+  Test::MockObject: 0
   Test::More: 0
   Test::NoWarnings: 0
 configure_requires:
