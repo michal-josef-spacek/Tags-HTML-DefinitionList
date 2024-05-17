@@ -17,7 +17,7 @@ sub new {
 	# Create object.
 	my ($object_params_ar, $other_params_ar) = split_params(
 		['border', 'color', 'css_class', 'dd_left_padding', 'dt_sep',
-		'dt_width', 'lang'], @params);
+		'dt_width'], @params);
 	my $self = $class->SUPER::new(@{$other_params_ar});
 
 	# Border of dl.
@@ -38,8 +38,6 @@ sub new {
 
 	# Definition term width.
 	$self->{'dt_width'} = '100px';
-
-	$self->{'lang'} = undef;
 
 	# Process params.
 	set_params($self, @{$object_params_ar});
