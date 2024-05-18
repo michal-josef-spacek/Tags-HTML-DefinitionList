@@ -87,7 +87,7 @@ is_deeply(
 		'Value',
 		'bad',
 	],
-	"Parameter 'dd_left_padding' doesn't contain unit number.",
+	"Parameter 'dd_left_padding' doesn't contain unit number (bad).",
 );
 clean();
 
@@ -105,7 +105,7 @@ is_deeply(
 		'Value',
 		'100',
 	],
-	"Parameter 'dd_left_padding' doesn't contain unit name.",
+	"Parameter 'dd_left_padding' doesn't contain unit name (100).",
 );
 clean();
 
@@ -125,7 +125,7 @@ is_deeply(
 		'Value',
 		'100xx',
 	],
-	"Parameter 'dd_left_padding' contain bad unit.",
+	"Parameter 'dd_left_padding' contain bad unit (100xx).",
 );
 clean();
 
@@ -143,7 +143,7 @@ is_deeply(
 		'Value',
 		'bad',
 	],
-	"Parameter 'dt_width' doesn't contain unit number.",
+	"Parameter 'dt_width' doesn't contain unit number (bad).",
 );
 clean();
 
@@ -161,7 +161,7 @@ is_deeply(
 		'Value',
 		'100',
 	],
-	"Parameter 'dt_width' doesn't contain unit name.",
+	"Parameter 'dt_width' doesn't contain unit name (100).",
 );
 clean();
 
@@ -181,7 +181,7 @@ is_deeply(
 		'Value',
 		'100xx',
 	],
-	"Parameter 'dt_width' contain bad unit.",
+	"Parameter 'dt_width' contain bad unit (100xx).",
 );
 clean();
 
