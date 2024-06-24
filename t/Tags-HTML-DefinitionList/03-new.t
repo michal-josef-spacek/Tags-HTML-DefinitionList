@@ -24,32 +24,6 @@ isa_ok($obj, 'Tags::HTML::DefinitionList');
 # Test.
 eval {
 	Tags::HTML::DefinitionList->new(
-		'css_class' => '@foo',
-	);
-};
-is(
-	$EVAL_ERROR,
-	"Parameter 'css_class' has bad CSS class name.\n",
-	'Parameter \'css_class\' has bad CSS class name (@bad).',
-);
-clean();
-
-# Test.
-eval {
-	Tags::HTML::DefinitionList->new(
-		'css_class' => '1foo',
-	);
-};
-is(
-	$EVAL_ERROR,
-	"Parameter 'css_class' has bad CSS class name (number on begin).\n",
-	"Parameter 'css_class' has bad CSS class name (number on begin) (1foo).",
-);
-clean();
-
-# Test.
-eval {
-	Tags::HTML::DefinitionList->new(
 		'css' => 'foo',
 	);
 };
@@ -70,6 +44,32 @@ is(
 	$EVAL_ERROR,
 	"Parameter 'css' must be a 'CSS::Struct::Output::*' class.\n",
 	"Parameter 'css' must be a 'CSS::Struct::Output::*' class (bad instance).",
+);
+clean();
+
+# Test.
+eval {
+	Tags::HTML::DefinitionList->new(
+		'css_class' => '@foo',
+	);
+};
+is(
+	$EVAL_ERROR,
+	"Parameter 'css_class' has bad CSS class name.\n",
+	'Parameter \'css_class\' has bad CSS class name (@bad).',
+);
+clean();
+
+# Test.
+eval {
+	Tags::HTML::DefinitionList->new(
+		'css_class' => '1foo',
+	);
+};
+is(
+	$EVAL_ERROR,
+	"Parameter 'css_class' has bad CSS class name (number on begin).\n",
+	"Parameter 'css_class' has bad CSS class name (number on begin) (1foo).",
 );
 clean();
 
